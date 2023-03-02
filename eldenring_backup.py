@@ -1,18 +1,13 @@
 from shutil import copyfile
-from datetime import datetime
 from os import path, makedirs, chdir
-
-# Reference: C:\Users\sgirv\AppData\Roaming\EldenRing\76561197990706360\
 
 elden_save = path.join(path.expanduser("~"), "AppData", "Roaming" , \
                         "EldenRing","76561197990706360")
 # Change to save folder
 chdir(elden_save)
 
-now = datetime.now().isoformat(timespec="minutes")
-
 # Ask user input for save name
-backup_name = input("Please enter a name for your backup: ") + "_" + now
+backup_name = input("Please enter a name for your backup: ")
 
 # Confirm input
 print(f"Saving backup as \"{backup_name}\".", \
